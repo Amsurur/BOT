@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заказ Уникальных Банковских Карт</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Создайте Свою Уникальную Банковскую Карту</h1>
+            <p>Персонализируйте свой финансовый инструмент</p>
+        </header>
+        <main>
+            <section class="intro">
+                <img src="./images/image.png" alt="Уникальная Банковская Карта" class="card-image">
+                <p>Устали от скучных стандартных карт? Создайте карту, которая отражает вашу индивидуальность! Выберите дизайн, материалы и дополнительные функции.</p>
+                <button id="start-order-button">Начать Заказ</button>
+            </section>
+            <section class="order-form hidden">
+                <h2>Настройка Вашей Карты</h2>
+                <form id="card-order-form">
+                    <div class="form-group">
+                        <label for="design-theme">Тема Дизайна:</label>
+                        <select id="design-theme" name="design-theme">
+                            <option value="abstract">Абстракция</option>
+                            <option value="nature">Природа</option>
+                            <option value="minimalist">Минимализм</option>
+                            <option value="custom">Свой дизайн (загрузить)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="material">Материал Карты:</label>
+                        <select id="material" name="material">
+                            <option value="plastic">Пластик</option>
+                            <option value="metal">Металл</option>
+                            <option value="eco-plastic">Эко-пластик</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="features">Дополнительные Функции:</label>
+                        <input type="checkbox" id="nfc" name="features" value="nfc"> <label for="nfc">NFC</label>
+                        <input type="checkbox" id="led" name="features" value="led"> <label for="led">LED-подсветка</label>
+                        <input type="checkbox" id="engraving" name="features" value="engraving"> <label for="engraving">Гравировка</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="name-on-card">Имя на Карте:</label>
+                        <input type="text" id="name-on-card" name="name-on-card" placeholder="Ваше имя" required>
+                    </div>
+                    <button type="submit">Отправить Заказ</button>
+                </form>
+                <div id="order-confirmation" class="hidden">
+                    <h3>Ваш заказ принят!</h3>
+                    <p>Мы свяжемся с вами в ближайшее время для уточнения деталей.</p>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2025 Уникальные Карты. Все права защищены.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('start-order-button').addEventListener('click', function() {
+            document.querySelector('.intro').classList.add('hidden');
+            document.querySelector('.order-form').classList.remove('hidden');
+        });
+
+        document.getElementById('card-order-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Здесь можно добавить логику отправки формы на сервер
+            document.getElementById('card-order-form').classList.add('hidden');
+            document.getElementById('order-confirmation').classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>
