@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Orbitron:wght@400;700&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460); /* Футуристический градиент */
+    color: #e0e0e0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    perspective: 1000px; /* Для 3D-эффектов */
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.05); /* Полупрозрачный фон */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 50px rgba(0, 255, 255, 0.3), 0 0 20px rgba(0, 255, 255, 0.1) inset; /* Неоновое свечение */
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 900px;
+    width: 90%;
+    animation: slideIn 1.5s ease-out forwards;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg);
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(-50px) rotateX(10deg); }
+    to { opacity: 1; transform: translateY(0) rotateX(0deg); }
+}
+
+header h1 {
+    font-family: 'Orbitron', sans-serif; /* Футуристический шрифт для заголовков */
+    color: #00ffff; /* Неоновый голубой */
+    font-size: 3.5em;
+    text-shadow: 0 0 15px #00ffff, 0 0 30px rgba(0, 255, 255, 0.5);
+    margin-bottom: 15px;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px #00ffff, 0 0 20px rgba(0, 255, 255, 0.5); }
+    to { text-shadow: 0 0 20px #00ffff, 0 0 40px rgba(0, 255, 255, 0.8); }
+}
+
+header p {
+    font-size: 1.3em;
+    color: #b0e0e6;
+    margin-bottom: 30px;
+}
+
+.intro, .order-form {
+    margin-top: 30px;
+}
+
+.card-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
+    transition: transform 0.5s ease-in-out;
+}
+
+.card-image:hover {
+    transform: scale(1.05) rotateY(5deg);
+}
+
+button {
+    background: linear-gradient(45deg, #00bfff, #007bff); /* Градиентная кнопка */
+    color: #fff;
+    border: none;
+    padding: 15px 35px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.4s ease-in-out;
+    margin: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px rgba(0, 191, 255, 0.4);
+}
+
+button:hover {
+    background: linear-gradient(45deg, #007bff, #00bfff);
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 191, 255, 0.6);
+}
+
+.hidden {
+    display: none;
+}
+
+.order-form h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: #00ffff;
+    margin-bottom: 25px;
+    font-size: 2em;
+    text-shadow: 0 0 10px #00ffff;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #b0e0e6;
+    font-size: 1.1em;
+}
+
+.form-group select,
+.form-group input[type="text"] {
+    width: calc(100% - 24px); /* Учитываем padding */
+    padding: 12px;
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    border-radius: 6px;
+    font-size: 1em;
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #e0e0e0;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2) inset;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.form-group select:focus,
+.form-group input[type="text"]:focus {
+    border-color: #00ffff;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5) inset;
+    outline: none;
+}
+
+.form-group input[type="checkbox"] {
+    margin-right: 8px;
+    transform: scale(1.2);
+    accent-color: #00ffff; /* Цвет для чекбоксов */
+}
+
+#order-confirmation {
+    margin-top: 30px;
+    padding: 25px;
+    background: rgba(0, 255, 255, 0.1);
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    border-radius: 10px;
+    color: #00ffff;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+}
+
+#order-confirmation h3 {
+    color: #00ffff;
+    margin-bottom: 15px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8em;
+}
+
+#order-confirmation p {
+    font-size: 1.1em;
+    color: #b0e0e6;
+}
+
+footer {
+    margin-top: 40px;
+    font-size: 0.9em;
+    color: #888;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
